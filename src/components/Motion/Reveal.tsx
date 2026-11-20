@@ -60,11 +60,11 @@ export const Reveal: React.FC<RevealProps> = ({
 
   const hiddenTransform =
     direction === 'left'
-      ? 'translate3d(-32px, 0, 0)'
+      ? 'translate3d(-50px, 0, 0)'
       : direction === 'right'
-        ? 'translate3d(32px, 0, 0)'
+        ? 'translate3d(50px, 0, 0)'
         : direction === 'up'
-          ? 'translate3d(0, 26px, 0)'
+          ? 'translate3d(0, 30px, 0)'
           : 'none';
 
   return (

@@ -61,7 +61,7 @@ export const CLINIC_IMAGES = {
   diagnosticMri: '/src/assets/images/spine_diagnostic_mri_1794931045487.jpg',
   physiotherapyRehab: '/src/assets/images/physiotherapy_rehab_1794931046089.jpg',
   doctorPortrait: '/src/assets/images/doctor_team_portrait_1794931046293.jpg',
-  heritageHealing: '/src/assets/images/spine_healing_heritage_1794933431548.jpg',
+  heritageHealing: '/src/assets/images/krishna_kubja_spine_healing.jpg',
   surgeonMale: '/src/assets/images/senior_spine_surgeon_male_1794933432590.jpg',
   specialistFemale: '/src/assets/images/specialist_spine_doctor_female_1794933432935.jpg',
   journeyBg: '/src/assets/images/spine_patient_journey_bg_1794933434675.jpg',

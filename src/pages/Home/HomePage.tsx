@@ -19,6 +19,7 @@ import {
   X,
   CheckCircle2,
   Globe,
+  MapPin,
 } from 'lucide-react';
 import { useDocumentMeta } from '../../hooks/useDocumentMeta';
 import { CLINIC_IMAGES, CLINIC_INFO } from '../../data/clinicInfo';
@@ -248,129 +249,184 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ============================================================
-          SECTION 2: ABOUT MOMENTUM CLINIC (ASYMMETRIC MASK + COUNTERS)
+          SECTION 2: ABOUT MOMENTUM CLINIC (EXACT REFERENCE ALIGNMENT)
       ============================================================ */}
-      <section className="py-16 lg:py-[100px] bg-white overflow-hidden">
+      <section className="py-16 lg:py-[90px] bg-white overflow-hidden">
         <div className="site-container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-            {/* Left Column: Masked Heritage Image + Overlapping Counter & Brand Card */}
-            <div className="lg:col-span-6">
-              <Reveal direction="left" delay={0.15} duration={0.9}>
-                <div className="about-img-masked aspect-[640/500] bg-[#EDF4FB]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+            {/* Left Column: Heritage Krishna-Kubja Image + 2 Counter Cards (Slides in from Left to Right) */}
+            <div className="lg:col-span-6 flex flex-col justify-between">
+              <Reveal direction="left" delay={0.15} duration={0.9} className="h-full flex flex-col justify-between">
+                {/* Krishna & Kubja Healing Classical Artwork */}
+                <div className="rounded-[26px] overflow-hidden bg-[#EDF4FB] shadow-[0_4px_24px_rgba(33,50,69,0.06)] aspect-[16/11] w-full">
                   <SafeImage
                     src={CLINIC_IMAGES.heritageHealing}
-                    alt="Classical heritage artwork depicting gentle spine alignment and compassionate care"
-                    className="w-full h-full object-cover"
+                    alt="Classical heritage painting depicting Lord Krishna performing gentle spine deformity correction on Kubja in Mathura"
+                    className="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-700"
                   />
                 </div>
-              </Reveal>
 
-              <div className="relative z-10 mt-4 md:-mt-[64px] flex flex-col sm:flex-row items-stretch sm:items-end gap-4">
-                <Reveal direction="up" delay={0.2} duration={0.85} className="sm:max-w-[270px] w-full">
-                  <div className="bg-[#025EC1]/[0.07] rounded-[22px] px-5 py-7">
-                    <div className="flex items-baseline text-[#213245] text-[52px] xl:text-[64px] font-semibold leading-none tracking-[-0.03em] mb-2">
+                {/* Sub-row with 2 cards matching exact screenshot layout */}
+                <div className="mt-5 grid grid-cols-1 sm:grid-cols-12 gap-4">
+                  {/* Card 1: 120+ years */}
+                  <div className="sm:col-span-5 bg-[#F2F6FA] rounded-[22px] p-6 flex flex-col justify-center">
+                    <div className="flex items-baseline text-[#1E3048] text-[46px] xl:text-[54px] font-bold leading-none tracking-tight mb-2">
                       <CounterUp target={120} />
-                      <sup className="text-[28px] ml-0.5">+</sup>
+                      <sup className="text-[26px] ml-0.5 text-[#025EC1]">+</sup>
                     </div>
-                    <p className="text-[15.5px] font-medium text-[#59616B] leading-snug">
+                    <p className="text-[14px] font-medium text-[#59616B] leading-snug">
                       years of combined spine care experience
                     </p>
                   </div>
-                </Reveal>
 
-                <Reveal direction="up" delay={0.25} duration={0.85} className="flex-1">
-                  <div className="bg-[#025EC1]/[0.07] border border-[#213245]/[0.04] rounded-[22px] px-6 py-6 flex items-center justify-between gap-4 h-full">
-                    <span className="text-[16px] font-semibold text-[#213245] leading-snug">
+                  {/* Card 2: Excellence in Spine Care */}
+                  <div className="sm:col-span-7 bg-[#F2F6FA] rounded-[22px] p-6 flex items-center justify-between gap-3">
+                    <span className="text-[15.5px] font-bold text-[#1E3048] leading-snug">
                       Excellence in Spine Care
                     </span>
-                    <div className="pl-4 border-l border-[#213245]/15 shrink-0 flex items-center gap-2">
-                      <span className="w-9 h-9 rounded-[10px] bg-[#025EC1] text-white flex items-center justify-center font-extrabold text-lg">
-                        M
-                      </span>
-                      <span className="text-xs font-extrabold tracking-[0.14em] uppercase text-[#025EC1]">
-                        Momentum
-                      </span>
+                    <div className="pl-4 border-l border-[#D1DCE8] shrink-0 flex items-center gap-2.5">
+                      <svg
+                        width="36"
+                        height="36"
+                        viewBox="0 0 40 40"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        className="shrink-0"
+                      >
+                        <rect width="40" height="40" rx="10" fill="#025EC1" />
+                        <path
+                          d="M20 7C17.5 10.5 16.5 14 18.2 17.5C19.8 20.8 22.8 22.5 21.5 26.8C20.5 29.8 18.5 31.8 17 33.2"
+                          stroke="#FFFFFF"
+                          strokeWidth="2.6"
+                          strokeLinecap="round"
+                        />
+                        <circle cx="20" cy="11.5" r="2.2" fill="#FFFFFF" />
+                        <circle cx="18.2" cy="17.5" r="2.2" fill="#FFFFFF" />
+                        <circle cx="21.4" cy="23.5" r="2.2" fill="#FFFFFF" />
+                        <circle cx="19" cy="29.5" r="2.2" fill="#FFFFFF" />
+                      </svg>
+                      <div className="flex flex-col leading-none">
+                        <span className="text-[12px] font-extrabold tracking-tight text-[#1E3048]">
+                          MOMENTUM
+                        </span>
+                        <span className="text-[8.5px] font-bold tracking-[0.14em] uppercase text-[#025EC1] mt-0.5">
+                          Spine Clinic
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </Reveal>
-              </div>
+                </div>
+              </Reveal>
             </div>
 
-            {/* Right Column: Editorial Story, Counters, CTA & Rotating Reach Badge */}
+            {/* Right Column: Editorial Story, Counters, CTA & Rotating Reach Badge (Slides in from Right to Left) */}
             <div className="lg:col-span-6">
-              <Reveal direction="right" delay={0.2} duration={0.9}>
-                <div className="relative bg-[#F5F9FE] rounded-[22px] p-7 sm:p-10 xl:p-12">
-                  <KickerMark label="ABOUT MOMENTUM" />
-
-                  <h2 className="sec-title mb-5">Restoring Mobility &amp; Life Quality in Dhanbad</h2>
-
-                  <p className="body-copy mb-5">
-                    Dedicated to restoring mobility and enhancing life quality, {CLINIC_INFO.specialityName} — {CLINIC_INFO.subtitle} — delivers state-of-the-art spinal solutions, disc replacements, and musculoskeletal trauma care across Dhaiya and Katras Bazar.
-                  </p>
-                  <p className="body-copy mb-7">
-                    Led by {CLINIC_INFO.leadDoctor} ({CLINIC_INFO.leadDoctorCredentials}, trained at CMC Vellore with over 10 years of clinical expertise), Momentum Clinic unites ethical second opinions, conservative spine care, and advanced surgical precision.
-                  </p>
-
-                  {/* Fun Facts */}
-                  <div className="flex flex-wrap sm:flex-nowrap gap-6 sm:gap-12 mb-8">
-                    <div className="relative pr-0 sm:pr-7 sm:border-r border-[#213245]/15">
-                      <div className="flex items-baseline text-[#213245] text-[50px] xl:text-[64px] font-semibold leading-none tracking-[-0.03em] mb-1.5">
-                        <CounterUp target={3} formatLocale={false} />
-                        <span>L</span>
-                        <sup className="text-[28px] ml-0.5">+</sup>
-                      </div>
-                      <Link
-                        to="/patient-care/international-patients"
-                        className="group inline-flex items-center gap-1.5 text-[16px] font-medium text-[#59616B] hover:text-[#025EC1] transition-colors"
+              <Reveal direction="right" delay={0.2} duration={0.9} className="h-full">
+                <div className="relative bg-[#F5F8FC] rounded-[28px] p-7 sm:p-10 xl:p-12 shadow-[0_4px_24px_rgba(33,50,69,0.04)] h-full flex flex-col justify-between">
+                  <div>
+                    {/* Top Leaf Icon + Kicker matching screenshot */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <svg
+                        className="w-4 h-4 text-[#E1533A]"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
                       >
-                        <span>Patients Treated</span>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-[#025EC1] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </Link>
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                      </svg>
+                      <span className="text-[#E1533A] text-xs font-bold tracking-[0.14em] uppercase">
+                        ABOUT MOMENTUM
+                      </span>
                     </div>
 
-                    <div>
-                      <div className="flex items-baseline text-[#213245] text-[50px] xl:text-[64px] font-semibold leading-none tracking-[-0.03em] mb-1.5">
-                        <CounterUp target={25} formatLocale={false} />
-                        <sup className="text-[28px] ml-0.5">+</sup>
+                    {/* Section Title */}
+                    <h2 className="text-[30px] sm:text-[38px] xl:text-[42px] font-bold text-[#1E3048] leading-[1.15] tracking-tight mb-5">
+                      Where Spine Healing Began — Restoring Mobility &amp; Life Quality in Dhanbad
+                    </h2>
+
+                    {/* Story Paragraphs matching exact reference text */}
+                    <p className="text-[15px] sm:text-[16px] leading-[1.65] text-[#59616B] mb-4">
+                      The first ever spine correction is believed to have been performed by Lord Krishna when he healed Kubja, a hunchbacked woman of Mathura, gently Correction of Spine Deformity with care and precision.
+                    </p>
+                    <p className="text-[15px] sm:text-[16px] leading-[1.65] text-[#59616B] mb-7">
+                      Inspired by this historic act of healing, Momentum Speciality Clinic &amp; Spine Research Center is dedicated to restoring spinal health through modern science, advanced surgical precision, and compassionate patient care.
+                    </p>
+
+                    {/* Fun Facts / Counters */}
+                    <div className="flex flex-wrap sm:flex-nowrap gap-6 sm:gap-12 mb-8">
+                      <div className="relative pr-0 sm:pr-8 sm:border-r border-[#D1DCE8]">
+                        <div className="flex items-baseline text-[#1E3048] text-[46px] xl:text-[54px] font-bold leading-none tracking-tight mb-1.5">
+                          <CounterUp target={3} formatLocale={false} />
+                          <span>L</span>
+                          <sup className="text-[26px] ml-0.5 text-[#025EC1]">+</sup>
+                        </div>
+                        <Link
+                          to="/patient-care/international-patients"
+                          className="group inline-flex items-center gap-1.5 text-[15px] font-medium text-[#59616B] hover:text-[#025EC1] transition-colors"
+                        >
+                          <span>Patients Treated</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#025EC1] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </Link>
                       </div>
-                      <p className="text-[16px] font-medium text-[#59616B]">Spine Care Experts</p>
+
+                      <div>
+                        <div className="flex items-baseline text-[#1E3048] text-[46px] xl:text-[54px] font-bold leading-none tracking-tight mb-1.5">
+                          <CounterUp target={25} formatLocale={false} />
+                          <sup className="text-[26px] ml-0.5 text-[#025EC1]">+</sup>
+                        </div>
+                        <p className="text-[15px] font-medium text-[#59616B]">Spine Care Experts</p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between gap-4">
-                    <ClinicButton to="/about/overview">Learn More</ClinicButton>
+                  {/* Bottom Row: CTA Button + Deep Blue Circular Rotating Emblem */}
+                  <div className="flex items-center justify-between gap-4 pt-4 border-t border-black/[0.04]">
+                    <Link
+                      to="/about/overview"
+                      className="inline-flex items-center gap-2 bg-[#025EC1] hover:bg-[#024EA2] text-white text-[15px] font-semibold px-7 py-3.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-md hover:translate-y-[-1px]"
+                    >
+                      <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+                      <span>Learn More</span>
+                    </Link>
 
-                    {/* Rotating Patient Reach Circular Emblem */}
+                    {/* Rotating Patient Reach Circular Emblem (Exact Stavya Blue Look) */}
                     <Link
                       to="/patient-care/international-patients"
-                      title="Explore Global Patient Reach"
-                      aria-label="Explore Momentum Clinic Global Patient Reach across 23+ countries"
-                      className="award-wrap-btn hidden sm:flex items-center justify-center relative w-[140px] h-[140px] xl:w-[166px] xl:h-[166px] rounded-full bg-white shadow-sm border border-[#025EC1]/10 shrink-0"
+                      title="Explore Patient Reach"
+                      aria-label="Explore Global Patient Reach"
+                      className="group relative flex items-center justify-center w-[124px] h-[124px] xl:w-[136px] xl:h-[136px] rounded-full bg-[#0A3060] shadow-md shrink-0 hover:scale-105 transition-transform duration-300 overflow-hidden"
                     >
                       <svg
                         viewBox="0 0 160 160"
-                        className="award-spin-ring w-full h-full p-1 text-[#025EC1]"
+                        className="award-spin-ring w-full h-full p-2 text-white"
                         aria-hidden="true"
                       >
                         <defs>
                           <path
-                            id="momentumCirclePath"
-                            d="M 80, 80 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0"
+                            id="momentumReachCirclePath"
+                            d="M 80, 80 m -58, 0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0"
                           />
                         </defs>
                         <text
                           fill="currentColor"
-                          fontSize="11.2"
+                          fontSize="10.8"
                           fontWeight="700"
-                          letterSpacing="2.4"
+                          letterSpacing="2.8"
                         >
-                          <textPath href="#momentumCirclePath">
-                            EST. 2004 • GLOBAL SPINE REACH • 23+ COUNTRIES •
+                          <textPath href="#momentumReachCirclePath">
+                            • SEE WHERE PATIENTS COME FROM • CLICK TO EXPLORE OUR REACH
                           </textPath>
                         </text>
                       </svg>
-                      <span className="award-center-icon absolute w-[68px] h-[68px] rounded-full bg-[#F5F9FE] text-[#025EC1] flex items-center justify-center transition-transform duration-500">
-                        <Globe className="w-8 h-8" strokeWidth={1.7} />
+                      {/* Center MapPin White Circle */}
+                      <span className="absolute w-[46px] h-[46px] rounded-full bg-white shadow-sm flex items-center justify-center text-[#025EC1] transition-transform duration-300 group-hover:scale-110">
+                        <MapPin className="w-5 h-5 text-[#025EC1]" strokeWidth={2.2} />
                       </span>
                     </Link>
                   </div>
