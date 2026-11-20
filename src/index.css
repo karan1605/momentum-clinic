@@ -659,23 +659,70 @@
 }
 
 /* ================================
-   About Section Stepped Mask & Circular Badge
+   About Section Stepped Mask & Interlocking Cards
 ================================ */
 .about-img-masked {
-  border-radius: 22px 22px 22px 0;
+  position: relative;
   overflow: hidden;
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 540' preserveAspectRatio='none'%3E%3Cpath d='M0,24 C0,10.7 10.7,0 24,0 L616,0 C629.3,0 640,10.7 640,24 L640,516 C640,529.3 629.3,540 616,540 L24,540 C10.7,540 0,529.3 0,516 L0,430 L320,430 C338,430 348,420 348,402 L348,370 C348,354 336,342 320,342 L0,342 Z'/%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 540' preserveAspectRatio='none'%3E%3Cpath d='M0,24 C0,10.7 10.7,0 24,0 L616,0 C629.3,0 640,10.7 640,24 L640,516 C640,529.3 629.3,540 616,540 L24,540 C10.7,540 0,529.3 0,516 L0,430 L320,430 C338,430 348,420 348,402 L348,370 C348,354 336,342 320,342 L0,342 Z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='645' height='486' viewBox='0 0 645 486' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M623 0C635.15 0 645 9.84974 645 22V442C645 462.742 645 473.113 638.556 479.556C632.113 486 621.742 486 601 486H312C299.85 486 290 476.15 290 464V429C290 416.85 280.15 407 268 407H44C23.2582 407 12.8873 407 6.44365 400.556C0 394.113 0 383.742 0 363V22C2.89935e-06 9.84974 9.84974 0 22 0H623Z' fill='black'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg width='645' height='486' viewBox='0 0 645 486' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M623 0C635.15 0 645 9.84974 645 22V442C645 462.742 645 473.113 638.556 479.556C632.113 486 621.742 486 601 486H312C299.85 486 290 476.15 290 464V429C290 416.85 280.15 407 268 407H44C23.2582 407 12.8873 407 6.44365 400.556C0 394.113 0 383.742 0 363V22C2.89935e-06 9.84974 9.84974 0 22 0H623Z' fill='black'/%3E%3C/svg%3E");
   mask-size: 100% 100%;
   -webkit-mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 639.98px) {
   .about-img-masked {
     mask-image: none;
     -webkit-mask-image: none;
-    border-radius: 18px;
+    border-radius: 22px;
   }
+}
+
+.about-left-bottom {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  margin-top: -68px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 639.98px) {
+  .about-left-bottom {
+    margin-top: 16px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.experience-area {
+  max-width: 270px;
+  width: 100%;
+  background-color: #F2F6FA;
+  border-radius: 24px;
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(33, 50, 69, 0.04);
+}
+
+.author-area {
+  flex: 1;
+  background-color: #F2F6FA;
+  border-radius: 22px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 80px;
+  box-shadow: 0 4px 16px rgba(33, 50, 69, 0.04);
 }
 
 @keyframes textRotate {

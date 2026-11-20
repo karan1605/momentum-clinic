@@ -254,65 +254,67 @@ export const HomePage: React.FC = () => {
       <section className="py-16 lg:py-[90px] bg-white overflow-hidden">
         <div className="site-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-            {/* Left Column: Heritage Krishna-Kubja Image + 2 Counter Cards (Slides in from Left to Right) */}
-            <div className="lg:col-span-6 flex flex-col justify-between">
-              <Reveal direction="left" delay={0.15} duration={0.9} className="h-full flex flex-col justify-between">
-                {/* Krishna & Kubja Healing Classical Artwork */}
-                <div className="rounded-[26px] overflow-hidden bg-[#EDF4FB] shadow-[0_4px_24px_rgba(33,50,69,0.06)] aspect-[16/11] w-full">
-                  <SafeImage
-                    src={CLINIC_IMAGES.heritageHealing}
-                    alt="Classical heritage painting depicting Lord Krishna performing gentle spine deformity correction on Kubja in Mathura"
-                    className="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-700"
-                  />
-                </div>
-
-                {/* Sub-row with 2 cards matching exact screenshot layout */}
-                <div className="mt-5 grid grid-cols-1 sm:grid-cols-12 gap-4">
-                  {/* Card 1: 120+ years */}
-                  <div className="sm:col-span-5 bg-[#F2F6FA] rounded-[22px] p-6 flex flex-col justify-center">
-                    <div className="flex items-baseline text-[#1E3048] text-[46px] xl:text-[54px] font-bold leading-none tracking-tight mb-2">
-                      <CounterUp target={120} />
-                      <sup className="text-[26px] ml-0.5 text-[#025EC1]">+</sup>
-                    </div>
-                    <p className="text-[14px] font-medium text-[#59616B] leading-snug">
-                      years of combined spine care experience
-                    </p>
+            {/* Left Column: Interlocking Krishna Painting & Stepped Counters (Slides in from Left to Right) */}
+            <div className="lg:col-span-6">
+              <Reveal direction="left" delay={0.15} duration={0.9}>
+                <div className="relative">
+                  {/* Krishna & Kubja Healing Classical Artwork with Exact Stepped Notch Mask */}
+                  <div className="about-img-masked aspect-[645/486] w-full bg-[#EDF4FB]">
+                    <SafeImage
+                      src={CLINIC_IMAGES.heritageHealing}
+                      alt="Classical heritage painting depicting Lord Krishna performing gentle spine deformity correction on Kubja in Mathura"
+                      className="w-full h-full object-cover object-center"
+                    />
                   </div>
 
-                  {/* Card 2: Excellence in Spine Care */}
-                  <div className="sm:col-span-7 bg-[#F2F6FA] rounded-[22px] p-6 flex items-center justify-between gap-3">
-                    <span className="text-[15.5px] font-bold text-[#1E3048] leading-snug">
-                      Excellence in Spine Care
-                    </span>
-                    <div className="pl-4 border-l border-[#D1DCE8] shrink-0 flex items-center gap-2.5">
-                      <svg
-                        width="36"
-                        height="36"
-                        viewBox="0 0 40 40"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        className="shrink-0"
-                      >
-                        <rect width="40" height="40" rx="10" fill="#025EC1" />
-                        <path
-                          d="M20 7C17.5 10.5 16.5 14 18.2 17.5C19.8 20.8 22.8 22.5 21.5 26.8C20.5 29.8 18.5 31.8 17 33.2"
-                          stroke="#FFFFFF"
-                          strokeWidth="2.6"
-                          strokeLinecap="round"
-                        />
-                        <circle cx="20" cy="11.5" r="2.2" fill="#FFFFFF" />
-                        <circle cx="18.2" cy="17.5" r="2.2" fill="#FFFFFF" />
-                        <circle cx="21.4" cy="23.5" r="2.2" fill="#FFFFFF" />
-                        <circle cx="19" cy="29.5" r="2.2" fill="#FFFFFF" />
-                      </svg>
-                      <div className="flex flex-col leading-none">
-                        <span className="text-[12px] font-extrabold tracking-tight text-[#1E3048]">
-                          MOMENTUM
-                        </span>
-                        <span className="text-[8.5px] font-bold tracking-[0.14em] uppercase text-[#025EC1] mt-0.5">
-                          Spine Clinic
-                        </span>
+                  {/* Interlocking bottom cards tucking into the cutout notch */}
+                  <div className="about-left-bottom">
+                    {/* Card 1: 120+ years (tucks into the cutout) */}
+                    <div className="experience-area">
+                      <div className="flex items-baseline text-[#1E3048] text-[52px] xl:text-[58px] font-bold leading-none tracking-tight mb-2">
+                        <CounterUp target={120} />
+                        <sup className="text-[26px] ml-0.5 text-[#025EC1]">+</sup>
+                      </div>
+                      <p className="text-[14px] font-medium text-[#59616B] leading-snug">
+                        years of combined spine care experience
+                      </p>
+                    </div>
+
+                    {/* Card 2: Excellence in Spine Care (sits below the right wing) */}
+                    <div className="author-area">
+                      <span className="text-[15px] xl:text-[16px] font-bold text-[#1E3048] leading-snug">
+                        Excellence in Spine Care
+                      </span>
+                      <div className="pl-4 border-l border-[#D1DCE8] shrink-0 flex items-center gap-2.5">
+                        <svg
+                          width="38"
+                          height="38"
+                          viewBox="0 0 40 40"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                          className="shrink-0"
+                        >
+                          <rect width="40" height="40" rx="10" fill="#025EC1" />
+                          <path
+                            d="M20 7C17.5 10.5 16.5 14 18.2 17.5C19.8 20.8 22.8 22.5 21.5 26.8C20.5 29.8 18.5 31.8 17 33.2"
+                            stroke="#FFFFFF"
+                            strokeWidth="2.6"
+                            strokeLinecap="round"
+                          />
+                          <circle cx="20" cy="11.5" r="2.2" fill="#FFFFFF" />
+                          <circle cx="18.2" cy="17.5" r="2.2" fill="#FFFFFF" />
+                          <circle cx="21.4" cy="23.5" r="2.2" fill="#FFFFFF" />
+                          <circle cx="19" cy="29.5" r="2.2" fill="#FFFFFF" />
+                        </svg>
+                        <div className="flex flex-col leading-none">
+                          <span className="text-[13px] font-extrabold tracking-tight text-[#1E3048]">
+                            MOMENTUM
+                          </span>
+                          <span className="text-[9px] font-bold tracking-[0.14em] uppercase text-[#025EC1] mt-0.5">
+                            Spine Clinic
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
