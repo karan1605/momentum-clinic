@@ -1,0 +1,8 @@
+{
+  "name": "Momentum Clinic",
+  "description": "Momentum Clinic – Super-specialty spine care hospital offering minimally invasive, endoscopic, robotic spine surgery, diagnostics, and rehabilitation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
