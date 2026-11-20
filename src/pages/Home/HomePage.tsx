@@ -162,13 +162,17 @@ export const HomePage: React.FC = () => {
       <section className="hero-slider-section">
         {/* Background Atmospheric Visual */}
         <div className="relative">
-          <div className="relative h-[320px] md:h-auto md:absolute md:inset-0 md:top-[84px] overflow-hidden z-0">
-            <SafeImage
-              src={CLINIC_IMAGES.heroClinic}
-              alt="Momentum Clinic super-specialty spine consultation suite"
-              eager
+          <div className="relative h-[320px] md:h-auto md:absolute md:inset-0 overflow-hidden z-0">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster={CLINIC_IMAGES.heroClinic}
               className="w-full h-full object-cover object-center"
-            />
+            >
+              <source src="/videos/stavya-video.mp4" type="video/mp4" />
+            </video>
             <div
               className="hidden md:block absolute inset-0"
               style={{
@@ -179,7 +183,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="relative z-10 site-container">
-            <div className="min-h-0 md:min-h-[700px] xl:min-h-[760px] pt-8 pb-10 md:pt-[140px] xl:pt-[180px] md:pb-[220px] xl:pb-[210px] flex items-center">
+            <div className="min-h-0 md:min-h-[640px] xl:min-h-[700px] pt-8 pb-10 md:pt-[70px] xl:pt-[90px] md:pb-[190px] xl:pb-[180px] flex items-center">
               <div className="max-w-[760px] w-full">
                 <span className="inline-flex items-center gap-2 text-[#025EC1] text-[13px] sm:text-[14px] font-semibold leading-none bg-[#025EC1]/[0.07] px-4 py-2.5 rounded-full mb-6">
                   <HeartHandshake className="w-[18px] h-[18px] shrink-0" aria-hidden="true" />

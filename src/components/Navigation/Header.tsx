@@ -41,7 +41,7 @@ const NAV_GROUPS: NavGroup[] = [
   },
   {
     id: 'about',
-    label: 'About us',
+    label: 'About',
     items: [
       { label: 'Hospital Overview', to: '/about/overview' },
       { label: 'Vision, Mission & Core Values', to: '/about/vision-mission' },
@@ -68,7 +68,7 @@ const NAV_GROUPS: NavGroup[] = [
   },
   {
     id: 'treatments',
-    label: 'Treatment & Procedures',
+    label: 'Treatments',
     items: [
       { label: 'All Spine Treatments', to: '/treatments' },
       { label: 'Minimally Invasive Spine Surgery', to: '/treatments/minimally-invasive-spine-surgery' },
@@ -92,7 +92,7 @@ const NAV_GROUPS: NavGroup[] = [
   },
   {
     id: 'research',
-    label: 'Innovation & Research',
+    label: 'Research',
     to: '/research',
   },
   {
@@ -105,7 +105,7 @@ const NAV_GROUPS: NavGroup[] = [
   },
   {
     id: 'contact',
-    label: 'Contact Us',
+    label: 'Contact',
     to: '/contact',
   },
 ];
@@ -257,13 +257,9 @@ export const Header: React.FC = () => {
     'Hello Momentum Clinic, I want to book a spine consultation.'
   )}`;
 
-  const headerPlacementClass = isHomePage
-    ? isSticky
-      ? `header-bottom-sticky ${isStickyShow ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 pointer-events-none'}`
-      : 'relative md:absolute md:top-[20px] lg:top-[26px] left-0 w-full z-50 bg-white border-b border-black/[0.06] md:bg-transparent md:border-b-0'
-    : isSticky
-      ? `header-bottom-sticky ${isStickyShow ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 pointer-events-none'}`
-      : 'relative w-full z-40 bg-white border-b border-black/[0.06]';
+  const headerPlacementClass = `sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-black/[0.08] transition-all duration-300 ${
+    isSticky ? 'shadow-[0_4px_20px_rgba(0,0,0,0.06)]' : ''
+  }`;
 
   const BrandLogo = (
     <Link
